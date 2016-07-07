@@ -1,0 +1,86 @@
+---
+title: "Model Prediction Test Documentation"
+author: "Avner Freiberger"
+output: pdf_document
+---
+
+
+# About the App
+
+## Model Prediction Test
+
+Model prediction test is a simple tool to visualise and test prediction models
+
+
+## What can you define?
+
+in order to test the various models you can:
+
+- select a dataset to test
+- define a training and testing set subsets
+- select a model to test
+- select the argument that will be participating
+- review prediction results in a plot, confusion matrix or summary
+
+## Datasets available
+
+the datasets available in the app are R
+
+- **spam:** A dataset collected at Hewlett-Packard Labs, that classifies 4601 e-mails as spam or non-spam. 
+- **mtcars:** A dataset extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile
+- **iris:** A famous (Fisher's or Anderson's) iris dataset which gives the measurements in centimeters of the variables sepal length and width and petal length and width
+- **OrchardSparys:** An experiment which was conducted to assess the potency of various constituents of orchard sprays in repelling honeybees
+- **swiss:** Standardized fertility measure and socio-economic indicators for each of 47 French-speaking provinces of Switzerland at about 1888
+
+
+## Models available
+
+The following models are available for testing
+
+- **glm:** generalized linear model
+- **k Nearest Neighbours**
+- **Neural Network**
+- **lm:** linear model
+- **rpart:** recursive partitioning and regression trees
+
+
+# Usage
+
+
+## 1. Select a dataset:
+
+![](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/img1.png)
+
+## 2. Select a classification algorithm
+
+[](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/img1.png)
+
+
+## 3. Set the percentage of training set (the rest will be set as a testing set)
+
+![](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/img3.png)
+
+## 4. Select the prdictors that you want to include in your model (use Ctrl or Shift to select multiple predictors) 
+
+![](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/img4.png)
+
+## 5. press "Predict!" keep in mind that some models will take a while. in addition not all models are applicable for all of the data sets 
+
+![](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/imgpredict.png)
+
+
+## 6. review results, you can see
+
+![](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/img5.png)
+
+you can change plot X and Y predictor to further estimate the prediction
+
+![](https://raw.githubusercontent.com/avnerfr/Developing-Data-Products-Shiny-Project/master/img6.png)
+
+
+
+
+##enjoy!
+
+
+
