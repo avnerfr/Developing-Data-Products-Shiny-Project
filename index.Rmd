@@ -1,0 +1,70 @@
+---
+title: "MODEL PREDICTION TEST"
+author: "Avner Freiberger"
+highlighter: highlight.js
+output: 
+job: null
+knit: slidify::knit2slides
+mode: selfcontained
+hitheme: tomorrow
+subtitle: A simple tool to visualise and test prediction models
+framework: io2012
+widgets: [mathjax,quiz,bootstrap]
+---
+
+
+## What can you define?
+
+in order to test the various models you can:
+
+>- select a dataset to test
+>- define a training and testing set subsets
+>- select a model to test
+>- select the argument that will be participating
+>- review prediction results in a plot, confusion matrix or summary
+
+--- .class #id 
+
+## Datasets available
+
+the datasets available in the app are R
+
+>- **spam:** A dataset collected at Hewlett-Packard Labs, that classifies 4601 e-mails as spam or non-spam. 
+>- **mtcars:** A dataset extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile
+>- **iris:** A famous (Fisher's or Anderson's) iris dataset which gives the measurements in centimeters of the variables sepal length and width and petal length and width
+>- **OrchardSparys:** An experiment which was conducted to assess the potency of various constituents of orchard sprays in repelling honeybees
+>- **swiss:** Standardized fertility measure and socio-economic indicators for each of 47 French-speaking provinces of Switzerland at about 1888
+
+
+--- .class #id 
+
+## Models available
+
+The following models are available for testing
+
+>- **glm:** generalized linear model
+>- **k Nearest Neighbours**
+>- **Neural Network**
+>- **lm:** linear model
+>- **rpart:** recursive partitioning and regression trees
+
+--- .class #id 
+
+## Enjoy
+
+https://avnerf.shinyapps.io/Model_Prediction_Test
+
+
+```{r echo = FALSE}
+library(caret)
+library(ggplot2)
+data(iris)
+inTrain <- createDataPartition(y= iris$Species, p=0.6,list = FALSE)
+training <- iris[inTrain,]
+testing <- iris[-inTrain,]
+modFit <- train(Species~., method = "rpart", data = training  )
+ggplot(testing, aes(Petal.Width,Petal.Length)) + geom_point(aes(colour = predict(modFit,testing)), size = 5)
+
+```
+
+
